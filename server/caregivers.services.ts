@@ -9,5 +9,5 @@ export async function getAllCaregivers(): Promise<CaregiverModel[]> {
     const caregiverQuerySnap: QuerySnapshot = await refCaregivers.get();
     const caregivers: CaregiverModel[] = [];
     caregiverQuerySnap.forEach(caregiverSnap => caregivers.push(caregiverSnap.data() as CaregiverModel));
-    return caregivers;
+    return caregivers
 }
