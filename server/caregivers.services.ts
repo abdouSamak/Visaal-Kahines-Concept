@@ -1,7 +1,7 @@
 import admin from "firebase-admin";
 import QuerySnapshot = admin.firestore.QuerySnapshot;
 
-const db = admin.firestore();
+const db = admin.firestore()
 
 const refCaregivers = db.collection('caregivers');
 
