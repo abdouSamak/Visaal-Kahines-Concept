@@ -1,8 +1,11 @@
-# seed pour commencer à faire du node pour les promos
+# Web application for a medical device
 
 # installation
 `cd server`
 
 `npm i`
 
-`lancer les tâches watch et serve dans package.json`
+`cd frontend`
+
+`npm i`
+
