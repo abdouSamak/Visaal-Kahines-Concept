@@ -7,7 +7,7 @@ admin.initializeApp({
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import {getAllPatients} from "./patients.services";
+import {deletePatientById, getAllPatients, postNewPatient} from "./patients.services";
 // @ts-ignore
 import {getAllCaregivers} from './caregivers.services';
 import {getAllpatientData} from "./patientData.services";
@@ -41,6 +41,26 @@ app.get('/api/patientsData', async (req, res) => {
         return res.status(500).send({error: 'erreur serveur :' + e.message});
     }
 })
+
+
+app.post('/api/patients', async (req, res) => {
+    try {
+        const newPatient = req.body;
+        const addResult = await postNewPatient(newPatient);
+        return res.send(addResult);
+    } catch (e) {
+        return res.status(500).send({error: 'erreur serveur :' + e.message});
+    }
+});
+app.delete('/api/patients/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const writeResult: string = await deletePatientById(id);
+        return res.send(writeResult);
+    } catch (e) {
+        return res.status(500).send({error: 'erreur serveur :' + e.message});
+    }
+});
 
 app.listen(3015, function () {
     console.log('API listening on http://localhost:3015/api/ !');

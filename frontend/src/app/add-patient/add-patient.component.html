@@ -1,0 +1,66 @@
+<div class="col-md-3">
+  <h2 class="text-center">Ajouter un patient</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Nom:</label>
+      <input type="text" formControlName="lastName" placeholder="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
+      <div *ngIf="submitted && f.lastName.errors">
+        <div *ngIf="f.lastName.errors.required">Veuillez saisir le nom du patient</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Prenom:</label>
+      <input type="text" formControlName="firstName" placeholder="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+      <div *ngIf="submitted && f.firstName.errors">
+        <div *ngIf="f.name.errors.required">Veuillez saisir le prenom du patient</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Age (ans):</label>
+      <input type="text" formControlName="age" placeholder="l'age" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.age.errors }">
+      <div *ngIf="submitted && f.age.errors">
+        <div *ngIf="f.price.errors.required">Veuillez saisir l'age du patient du patient</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Sex:</label>
+      <input type="text" formControlName="sex" placeholder="sex" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sex.errors }">
+      <div *ngIf="submitted && f.sex.errors">
+        <div *ngIf="f.price.errors.required">Veuillez saisir le sex du patient du patient</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Service:</label>
+      <input type="text" formControlName="service" placeholder="le service" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.service.errors }">
+      <div *ngIf="submitted && f.service.errors">
+        <div *ngIf="f.price.errors.required">Veuillez saisir le service du patient du patient</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Etage:</label>
+      <input type="text" formControlName="floor" placeholder="l'etage" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.floor.errors }">
+      <div *ngIf="submitted && f.floor.errors">
+        <div *ngIf="f.price.errors.required">Veuillez saisir l'etage où se trouve le patient</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>N° du lit:</label>
+      <input type="text" formControlName="numberOfBed" placeholder="N° du lit" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.numberOfBed.errors }">
+      <div *ngIf="submitted && f.age.errors">
+        <div *ngIf="f.price.errors.required">Veuillez saisir le numero de lit du patient</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>N° de l'appareil</label>
+      <input type="text" formControlName="numberOfdevice" placeholder="Description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.numberOfdevice.errors }">
+      <div *ngIf="submitted && f.numberOfdevice.errors">
+        <div *ngIf="f.quality.errors.required">Veuillez saisir le numero d'appareil du patient</div>
+      </div>
+    </div>
+
+
+
+    <button type="submit"  class="btn btn-info">Save</button>
+  </form>
+</div>
+
