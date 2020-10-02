@@ -10,12 +10,15 @@ import {PatientsService} from "../services/patients.service";
   styleUrls: ['./patients.component.scss']
 })
 export class PatientsComponent implements OnInit {
+  theme = true;
 
-
-  constructor(private authService: AuthService, private router: Router, private patientsService: PatientsService) { }
+  constructor(public authService: AuthService, private router: Router, private patientsService: PatientsService) { }
 
   patients: PatientModel[];
 
+  logout() {
+    this.authService.signOut();
+  }
   ngOnInit(): void {
     this.getAllPatients();
   }
