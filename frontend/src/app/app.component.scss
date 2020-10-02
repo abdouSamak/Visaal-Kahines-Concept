@@ -1,6 +1,6 @@
 // CSS header
 .top-bar {
-  background: #555;
+  background: darkslateblue;
   color: #fff;
   font-size: 0.9rem;
   padding: 10px 0;
@@ -16,7 +16,14 @@
   margin-right: 10px;
 }
 // CSS footer
+.footer-container {
+  color: #FFFFFF;
+  font-size: 12px;
+  height: 300px;
+  padding-top: 20px;
+  bottom:0;
 
+}
 .context-dark, .bg-gray-dark, .bg-primary {
   color: rgba(255, 255, 255, 0.8);
 }
@@ -66,3 +73,314 @@ ul, ol {
   visibility: hidden;
   transition: .22s ease;
 }
+/*********************************************************************/
+/*html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font-family: 'Work Sans', sans-serif;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #fff;
+  padding: 0;
+  margin: 0;
+  font-family: 'Varela Round', sans-serif;
+}
+
+h2 {
+  margin: 0;
+}
+*/
+.sidebarIconToggle {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: fixed;
+  width: 44px;
+  height: 44px;
+  z-index: 961;
+  top: 22px;
+  left: 20px;
+}
+
+.spinner {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 6px;
+}
+
+.diagonal.part-1 {
+  position: relative;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  float: left;
+}
+
+.diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 6px;
+}
+
+#sideback {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 120%;
+  width: 100%;
+  z-index: 949;
+  display: none;
+  background-color: transparent;
+}
+
+#sidebarMenu {
+  height: 100%;
+  width: 480px;
+  position: fixed;
+  left: 0;
+  margin: 0;
+  transform: translateX(-480px);
+  transition: transform 250ms ease-in-out;
+  background: rgba(0, 0, 0, 0.80);
+  z-index: 950;
+}
+
+.sidebarMenuInner {
+  margin: 40px 0 0 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li {
+  color: #fff;
+  list-style: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li a {
+  width: 450px;
+  line-height: 60px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sidebarMenuInner li :hover {
+  color: royalblue;
+  transition: color 500ms ease;
+}
+
+.sidebarMenuInner li a {
+  padding: 20px 320px 20px 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+input[type="checkbox"] {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  display: none;
+}
+
+input[type="reset"] {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ #sidebarMenu {
+  transform: translateX(0);
+}
+
+input[type="checkbox"]:checked ~ #sideback {
+  display: block;
+}
+
+input[type="checkbox"]:checked ~ .sidebarIconToggle > .horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  opacity: 0;
+}
+
+input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(135deg);
+  margin-top: 16px;
+}
+
+input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(-135deg);
+  margin-top: -18px;
+}
+
+.linkinconbox {
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  margin: 20px;
+}
+
+.linkicon {
+  filter: invert(88%) sepia(61%) saturate(0%) hue-rotate(229deg) brightness(107%) contrast(101%);
+  display: inline-block;
+  border-bottom: solid 2px transparent;
+}
+
+.linkicon:hover {
+  border-bottom: solid 2px royalblue;
+}
+
+.linkimg {
+  width: 50px;
+  padding: 6px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.contenair-fluid {
+  padding: 0;
+  margin: -8px;
+}
+
+.sec-top {
+  height: 540px;
+  min-width: 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /*background-image: url("../assets/javascript-bkg.PNG");*/
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sec-main {
+  margin-top: 30px;
+  background-color: #184772;
+  min-height: 500px;
+  min-width: 720px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.name1 {
+  font-size: 70px;
+  color: white;
+  line-height: 70px;
+  flex-grow: 0;
+}
+
+.name2 {
+  font-size: 36px;
+  color: white;
+  flex-grow: 0;
+}
+
+.dlcv {
+  flex-grow: 0;
+}
+
+.dlcv a {
+  padding: 10px;
+  font-size: 24px;
+  border: solid 4px white;
+  border-radius: 5px;
+  color: white;
+}
+
+.dlcv a:hover {
+  padding: 10px;
+  font-size: 24px;
+  border: solid 3px white;
+  border-radius: 5px;
+  color: white;
+  filter: invert(50%) sepia(0%) saturate(11%) hue-rotate(143deg) brightness(101%) contrast(93%);
+  transition: all 500ms ease;
+}
+
+.dlcv img {
+  height: 40px;
+  margin: 0 20px -10px 0;
+  filter: invert(88%) sepia(61%) saturate(0%) hue-rotate(229deg) brightness(107%) contrast(101%);
+}
+
+.dlcv img :hover {
+  filter: invert(50%) sepia(0%) saturate(11%) hue-rotate(143deg) brightness(101%) contrast(93%);
+  transition: all 500ms ease;
+}
+
+.name3 {
+  font-size: 26px;
+  color: white;
+  z-index: 82;
+  flex-grow: 0;
+}
+
+
+.nameempty1 {
+  flex-grow: 3;
+}
+
+.namebox {
+  flex-grow: 0;
+}
+
+.nameempty2 {
+  flex-grow: 1;
+}
+
+.nameempty3 {
+  flex-grow: 1;
+}
+/***********************************************************************************/
+

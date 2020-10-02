@@ -8,8 +8,49 @@
   <div class="container">
     <div class="row d-flex align-items-center">
       <div class="col-md-6 d-md-block d-none">
+        <section>
+          <form name="checks">
+            <input type="checkbox" id="openSidebarMenu">
+            <input type="reset" id="closeSidebarMenu">
+
+            <label for="openSidebarMenu" class="sidebarIconToggle">
+              <span class="spinner diagonal part-1"></span>
+              <span class="spinner horizontal"></span>
+              <span class="spinner diagonal part-2"></span>
+            </label>
+
+            <label for="closeSidebarMenu" id="sideback"></label>
+            <label for="closeSidebarMenu"></label>
+
+            <div id="sidebarMenu">
+              <ul class="sidebarMenuInner">
+                <li><a *ngIf= "route === true" (click)="jumptop()" routerLink="#">About</a></li>
+                <li><a onClick="jump()" routerLink="#">Projects</a></li>
+                <li><a onClick="jump()" routerLink="#">Blog</a></li>
+                <li><a onClick="jump()" routerLink="#">Contacts</a></li>
+                <li><a onClick="jump()" routerLink="#">Pricing</a></li>
+              </ul>
+
+              <div class="linkinconbox">
+                <div class="linkicon"><a href="https://www.linkedin.com/in/abdourahmane-samake-027a37172/"> <img
+                  src="../assets/icons8-linkedin-100.png" class="linkimg" alt=""></a>
+                </div>
+                <div class="linkicon"><a href="https://gitlab.com/abdou.samake"> <img src="../assets/icons8-gitlab-100.png"
+                                                                                      class="linkimg" alt=""></a>
+                </div>
+                <div class="linkicon"><a href="https://github.com/abdouSamak"> <img src="../assets/icon_github.png" width="80px" height="40px"
+                                                                                    class="linkimg" alt=""></a>
+                </div>
+                <div class="linkicon"><a href="https://www.facebook.com/abdourahmane.samake"> <img
+                  src="../assets/icons8-facebook-old-100.png" class="linkimg" alt=""></a>
+                </div>
+              </div>
+
+            </div>
+          </form>
+        </section>
         <!-- Menu -->
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+       <!-- <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
@@ -30,6 +71,7 @@
             <a routerLinkActive="active"  routerLink="/login">  <span>Deconnexion</span> </a>
           </button>
         </mat-menu>
+        -->
       </div>
       <div class="col-md-6">
         <p id="visaal">VISAAL</p>
@@ -47,7 +89,7 @@
 
 <!-- footer -->
 <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
-  <div class="container">
+  <div class="footer-container">
     <div class="row row-30">
       <div class="col-md-4 col-xl-5">
         <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light" src="images/agency/logo-inverse-140x37.png" alt="" width="140" height="37" srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>

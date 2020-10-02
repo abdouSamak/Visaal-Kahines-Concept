@@ -1,7 +1,7 @@
 <h1 style="text-align:center">
   Visaal - Kahines Concept
 </h1>
-<div class="login">
+<!--<div class="login">
   <h2 class="login-header">S'identifier</h2>
   <form [formGroup]="loginForm" class="login-container" (ngSubmit)="seConnecter()">
     <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
@@ -24,4 +24,62 @@
       <input type="submit" value="Log in">
     </p>
   </form>
-</div>
+</div>-->
+
+  <div class ="login" *ngIf="isNewUser">
+
+    <p *ngIf="errorMessage.length > 0" class="text-danger">
+      {{errorMessage}}</p>
+
+    <p *ngIf="error.message.length > 0" class="text-danger">
+      {{error.message}}</p>
+
+    <form (ngSubmit)="onSignUp()">
+      <div class="form-group">
+        <label for="email">Email</label> <input type="email"
+                                                class="form-control" id="email" name="email" required
+                                                [(ngModel)]="email">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label> <input type="password"
+                                                      class="form-control" id="password" name="password" required
+                                                      [(ngModel)]="password">
+      </div>
+
+      <button type="submit" class="btn btn-success">Register</button>
+    </form>
+
+    <h4 class="text-primary" (click)="changeForm()">Already have an Account? >> Log In</h4>
+  </div>
+
+  <div style="width: 350px;" *ngIf="!isNewUser">
+
+    <p *ngIf="errorMessage.length > 0" class="text-danger">
+      {{errorMessage}}</p>
+
+    <p *ngIf="error.message.length > 0" class="text-danger">
+      {{error.message}}</p>
+
+    <form (ngSubmit)="onLoginEmail()">
+      <div class="form-group">
+        <label for="email">Email</label> <input type="text"
+                                                class="form-control" name= "email" required
+                                                [(ngModel)]="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label> <input type="password"
+                                                      class="form-control" name="password" required
+                                                      [(ngModel)]="password">
+      </div>
+
+      <button type="submit" class="btn btn-success">Log In</button>
+    </form>
+
+    <button type="button" class="text-primary" (click)="changeForm()">Not have any Account yet? >> Register</button>
+
+    <button *ngIf="!resetPassword && isValidMailFormat(email)" class="text-danger" (click)="sendResetEmail()">Reset Password for {{email}}</button>
+    <p *ngIf="resetPassword" class="text-success">Check your email to reset password!</p>
+
+  </div>
+
