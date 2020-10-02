@@ -16,17 +16,17 @@
       </div>
     </div>
     <div class="form-group">
-      <label>Age (ans):</label>
-      <input type="text" formControlName="age" placeholder="l'age" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.age.errors }">
-      <div *ngIf="submitted && f.age.errors">
-        <div *ngIf="f.price.errors.required">Veuillez saisir l'age du patient du patient</div>
+      <label>Date de naissance:</label>
+      <input type="text" formControlName="dateOfBirthday" placeholder="Date de naissance" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.age.errors }">
+      <div *ngIf="submitted && f.dateOfBirthday.errors">
+        <div *ngIf="f.price.errors.required">Veuillez saisir l'age du patient</div>
       </div>
     </div>
     <div class="form-group">
       <label>Sex:</label>
       <input type="text" formControlName="sex" placeholder="sex" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sex.errors }">
       <div *ngIf="submitted && f.sex.errors">
-        <div *ngIf="f.price.errors.required">Veuillez saisir le sex du patient du patient</div>
+        <div *ngIf="f.price.errors.required">Veuillez saisir le sex du patient</div>
       </div>
     </div>
     <div class="form-group">
@@ -40,6 +40,13 @@
       <label>Etage:</label>
       <input type="text" formControlName="floor" placeholder="l'etage" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.floor.errors }">
       <div *ngIf="submitted && f.floor.errors">
+        <div *ngIf="f.price.errors.required">Veuillez saisir l'etage où se trouve le patient</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>N° de chambre</label>
+      <input type="text" formControlName="numberOfRoom" placeholder="N° de chambre" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.numberOfRoom.errors }">
+      <div *ngIf="submitted && f.numberOfRoom.errors">
         <div *ngIf="f.price.errors.required">Veuillez saisir l'etage où se trouve le patient</div>
       </div>
     </div>

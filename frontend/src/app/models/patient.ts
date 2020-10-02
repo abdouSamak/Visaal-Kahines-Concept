@@ -9,5 +9,6 @@ export interface PatientModel {
   sex: string;
   stateOfRinsingLiquid: string;
   stateOfUrinaryCollector: string;
-  age: number;
+  dateOfBirthday: number;
+  numberOfDevice: number
 }

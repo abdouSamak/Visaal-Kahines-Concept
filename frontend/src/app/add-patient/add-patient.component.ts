@@ -20,10 +20,11 @@ export class AddPatientComponent implements OnInit {
     this.addForm = this.formBuilder.group({
       lastName: ['', Validators.required],
       firstName: ['', Validators.required],
-      age: ['', Validators.required],
+      dateOfBirthday: ['', Validators.required],
       sex: ['', Validators.required],
       service: ['', Validators.required],
       floor: ['', Validators.required],
+      numberOfRoom: ['', Validators.required],
       numberOfBed: ['', Validators.required],
       numberOfdevice: ['', Validators.required],
     });

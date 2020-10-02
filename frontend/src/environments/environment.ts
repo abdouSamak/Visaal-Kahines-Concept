@@ -4,7 +4,16 @@
 
 export const environment = {
   production: false,
-  urlDataBase: 'http://localhost:3015/api/'
+  urlDataBase: 'http://localhost:3015/api/',
+  firebase: {
+    apiKey: "AIzaSyDYbmvnkjQ6Rn-PtQ2R1A6-c2oEB_-o1tc",
+    authDomain: "visaalapp.firebaseapp.com",
+    databaseURL: "https://visaalapp.firebaseio.com",
+    projectId: "visaalapp",
+    storageBucket: "visaalapp.appspot.com",
+    messagingSenderId: "722136752645",
+    appId: "1:722136752645:web:4374ce75356589fce6f26c"
+  }
 };
 
 /*
